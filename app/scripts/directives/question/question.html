@@ -1,2 +1,9 @@
 <h1>Formulario</h1>
-<text></text>
+<form name="userForm" ng-submit="submit()" novalidate>
+    <field type="text" label="Campo de texto" name="texto"></field>
+    <field type="email" label="Un correo" name="email"></field>
+
+    <br>
+    <button type="submit" ng-disabled="" class="btn btn-success">Send</button>
+
+</form>

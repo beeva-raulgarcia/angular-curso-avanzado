@@ -9,7 +9,9 @@ moduleAngular
 
       },
       link: function(scope) {
-
+        scope.submit = function() {
+            console.log('===============>>>');
+        };
       }
     };
   });
