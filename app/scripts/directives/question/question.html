@@ -1,9 +1,78 @@
 <h1>Formulario</h1>
-<form name="userForm" ng-submit="submit()" novalidate>
-    <field type="text" label="Campo de texto" name="texto"></field>
-    <field type="email" label="Un correo" name="email"></field>
+<form name="userForm" ng-submit="submit(userForm.$valid)" novalidate>
+    <field
+            type="text"
+            value="fields.text.value"
+            label="fields.text.label"
+            name="fields.text.name"
+            placeholder="fields.text.placeholder"
+            minlength="fields.text.minlength"
+            maxlength="fields.text.maxlength"
+            required="fields.text.required">
+    </field>
+    <field
+            type="email"
+            label="fields.email.label"
+            placeholder="fields.email.placeholder"
+            value="fields.email.value"
+            name="fields.email.name"
+            required="fields.email.required">
+    </field>
 
+    <field
+            type="number"
+            label="fields.number.label"
+            value="fields.number.value"
+            name="fields.number.name"
+            min="fields.number.min"
+            max="fields.number.max"
+            required="fields.number.required">
+    </field>
+    <field
+            type="date"
+            label="fields.date.label"
+            value="fields.date.value"
+            name="fields.date.name"
+            min="fields.date.min"
+            max="fields.date.max"
+            required="fields.date.required">
+    </field>
+    <field
+            type="color"
+            value="fields.color.value"
+            label="fields.color.label"
+            name="fields.color.name"
+            required="fields.color.required">
+    </field>
+    <field
+            type="radio"
+            value="fields.radio.value"
+            label="fields.radio.label"
+            name="fields.radio.name"
+            options="fields.radio.options"
+            required="fields.radio.required">
+
+    </field>
+    <field
+            type="check"
+            value="fields.check.value"
+            label="fields.check.label"
+            name="fields.check.name"
+            options="fields.check.options"
+            required="fields.check.required">
+
+    </field>
+    <!--
+    <field type="check" label="" name="acepto" options="[
+        { name: 'Acepto las condiciones que no me he leído', selected: false }
+        ]" required="true">
+    </field>-->
     <br>
-    <button type="submit" ng-disabled="" class="btn btn-success">Send</button>
-
+    <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-success">Enviar</button>
 </form>
+<modal
+    id="modal"
+    title="Resultado del formulario"
+    resume="{{resume}}">
+
+</modal>

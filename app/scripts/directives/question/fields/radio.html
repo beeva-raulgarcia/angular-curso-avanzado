@@ -1,0 +1,18 @@
+<div class="form-group">
+    <p>{{label}} <span ng-if="required">*</span></p>
+    <div ng-repeat="op in options track by $index" >
+        <input
+           type="radio"
+           ng-model="$parent.value"
+           name="{{name}}"
+           value="{{op.name}}"
+           ng-checked="op.selected"
+           ng-required="{{op.required}}"
+        >
+        {{op.name}}
+        <br>
+    </div>
+    <div ng-show="myForm.$invalid && !myForm.$pristine" class="help-block">
+        <p ng-show="myForm.$error.required" class="help-block">{{label}} is required.</p>
+    </div>
+</div>

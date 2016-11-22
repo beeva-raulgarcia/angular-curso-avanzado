@@ -8,13 +8,20 @@ moduleAngular
     return {
       require: '^form',
       templateUrl: function(el, attrs){
-        console.log(attrs)
         return '/scripts/directives/question/fields/'+attrs.type+'.html'
       },
-      restrict: 'EA',
+      restrict: 'E',
       scope: {
-        label: '@',
-        name: '@'
+        label: '=',
+        value: '=',
+        placeholder: '=',
+        name: '=',
+        maxlength: '=',
+        minlength: '=',
+        max: '=',
+        min: '=',
+        options: '=',
+        required: '='
       },
       link: function(scope) {
         scope.myForm = scope.$parent.userForm[scope.name];

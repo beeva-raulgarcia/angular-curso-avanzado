@@ -1,6 +1,12 @@
-<div>
-    <p>{{label}}</p>
-    <input type="email" required ng-model="model" name="{{name}}">
+<div class="form-group">
+    <p>{{label}} <span ng-if="required">*</span></p>
+    <input
+        type="email"
+        ng-model="value"
+        name="{{name}}"
+        placeholder="{{placeholder}}"
+        ng-required="{{required}}">
+    
     <div ng-show="myForm.$invalid && !myForm.$pristine" class="help-block">
         <p ng-show="myForm.$error.required">{{label}} is required.</p>
         <p ng-show="myForm.$error.email">Email is incorrect.</p>

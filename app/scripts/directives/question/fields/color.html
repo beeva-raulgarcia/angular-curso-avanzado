@@ -1,0 +1,10 @@
+<div class="form-group">
+    <p>{{label}} <span ng-if="required">*</span></p>
+    <input type="color"
+           ng-required="{{required}}"
+           ng-model="value"
+           name="{{name}}">
+    <div ng-show="myForm.$invalid && !myForm.$pristine" class="help-block">
+        <p ng-show="myForm.$error.required" class="help-block">{{label}} is required.</p>
+    </div>
+</div>

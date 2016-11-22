@@ -1,0 +1,16 @@
+<div class="form-group">
+    <p>{{label}} <span ng-if="required">*</span></p>
+    <input type="date"
+           ng-required="{{required}}"
+           ng-model="value"
+           name="{{name}}"
+           max="{{max}}"
+           min="{{min}}">
+
+    <div ng-show="myForm.$invalid && !myForm.$pristine" class="help-block">
+        <p ng-show="myForm.$error.required" class="help-block">{{label}} is required.</p>
+        <p ng-show="myForm.$error.date" class="help-block">This date is incorrect.</p>
+        <p ng-show="myForm.$error.max" class="help-block">This date mustn't to be greater than {{max}}.</p>
+        <p ng-show="myForm.$error.min" class="help-block">This date mustn't to be less than {{min}}.</p>
+    </div>
+</div>
